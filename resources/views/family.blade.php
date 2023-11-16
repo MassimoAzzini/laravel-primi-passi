@@ -20,7 +20,7 @@
                             <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active fw-bold" href="/family">Family</a>
+                            <a class="nav-link active fw-bold disabled" href="/family">Family</a>
                         </li>
                     </ul>
                 </div>
