@@ -33,7 +33,7 @@
 
             <h1 class="my-5 fw-bold">{{ strtoupper($title) }}</h1>
 
-            <p>Scopri i componenti della mia Family</p>
+            <p>Scopri i componenti della mia <a href="/family">Family</a></p>
 
         </div>
 
