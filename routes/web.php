@@ -17,3 +17,25 @@ Route::get('/', function () {
     $title = 'Hello Laravel';
     return view('home', compact('title'));
 });
+
+Route::get('/family', function () {
+    $title = 'Family';
+    $components = [
+        [
+            'name' => 'Massimo',
+            'lastname' => 'Azzini',
+            'age' => '39',
+        ],
+        [
+            'name' => 'Valeria',
+            'lastname' => 'Razzetti',
+            'age' => '38',
+        ],
+        [
+            'name' => 'Daniele',
+            'lastname' => 'Azzini',
+            'age' => '6',
+        ],
+    ];
+    return view('family', compact('title', 'components'));
+});
