@@ -7,7 +7,7 @@
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
 
-    <title>Family</title>
+    <title>Home</title>
 </head>
 <body>
     <header>
@@ -20,7 +20,7 @@
                             <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active fw-bold disabled" href="/family">Family</a>
+                            <a class="nav-link fw-bold" href="/family">Family</a>
                         </li>
                     </ul>
                 </div>
@@ -29,35 +29,24 @@
 
     </header>
     <main>
-        <div class="container d-flex flex-column align-items-center">
+        <div class="container text-center">
+            @foreach ($informations as $information)
 
-            <h1 class="my-5 fw-bold">{{ strtoupper($title) }}</h1>
+            @endforeach
+            <h1 class="my-5 fw-bold">{{ $information['name'] }} {{ $information['lastname'] }}</h1>
+            <div>
+                <span class="mx-3">
 
-            <table class="table w-75">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Lastname</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach ($components as $component )
+                    Anni: <strong class="ms-2">{{ $information['age'] }}</strong>
+                </span>
+                <span class="mx-3">
+                    Interessi: <strong class="ms-2"> {{ implode(', ', $information['interessi']) }}</strong>
+                </span>
+            </div>
 
-                        <tr>
-                            <td>{{ $component['name'] }}</td>
-                            <td>{{ $component['lastname'] }}</td>
-                            <td>{{ $component['age'] }}</td>
-                            <td><a class="btn btn-sm btn-danger" href="{{$component['link']}}">VAI</a></td>
-                        </tr>
-
-                    @endforeach
-                </tbody>
-              </table>
+            <p class="my-3">{{ $information['storia'] }}</p>
 
         </div>
-
 
     </main>
 </body>
